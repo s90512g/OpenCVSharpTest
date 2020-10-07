@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="BtnStart" Content="Start" Click="BtnStart_Click" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="BtnStop" Content="Stop" Click="BtnStop_Click" Grid.Row="1" Grid.Column="3"/>
+        <Image  Source="{Binding Img}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="4"/>
     </Grid>
 </Window>

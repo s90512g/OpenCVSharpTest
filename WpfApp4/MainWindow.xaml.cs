@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp4.ViewModel;
 
 namespace WpfApp4
 {
@@ -20,9 +21,21 @@ namespace WpfApp4
     /// </summary>
     public partial class MainWindow : Window
     {
+        private WindowViewModel viewmodel = new WindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = viewmodel;
+        }
+
+        private void BtnStart_Click(object sender, RoutedEventArgs e)
+        {
+            viewmodel.StartGetImage();
+        }
+
+        private void BtnStop_Click(object sender, RoutedEventArgs e)
+        {
+            viewmodel.StopGetImage();
         }
     }
 }
